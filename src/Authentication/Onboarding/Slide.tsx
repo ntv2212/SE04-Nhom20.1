@@ -1,33 +1,44 @@
 
 import React from 'react'
-import { Dimensions } from 'react-native'
-import { View, Text,StyleSheet } from 'react-native'
-
-
+import {View,StyleSheet ,Dimensions} from 'react-native'
+import {Text} from "../../components"
 const {width, height} = Dimensions.get("window")
 export const SLIDE_HEIGHT = 0.61 * height;
+// export const BORDER_RADIUS =75;
 const styles = StyleSheet.create({
     container: {
         width,
+        overflow: "hidden",
     },
+  
+    // picture:{
+    //     ...StyleSheet.absoluteFillObject,
+    //     width:undefined,
+    //     height:undefined,
+    //     borderBottomRightRadius: BORDER_RADIUS,
+    //     borderBottomLeftRadius: BORDER_RADIUS,
+    // },
     titleContainer:{
-        
         height: 100,
         justifyContent:"center",
-        
     },
-    title: {
-        fontSize : 70,
-        color: "white",
-        textAlign: "center",
-        lineHeight: 70,
-    }
+    // tittle:{
+    //     fontSize : 70,
+    //     color: "white",
+    //     textAlign: "center",
+    //     lineHeight: 70,
+    // },
 })
 interface SlideProps{
     title: string;
     right?: boolean;
+    // picture: {
+    //     src:ImageRequireSource;
+    //     width:number;
+    //     height:number;
+    // };
 }
-const Slide = ({title, right} : SlideProps) => {
+const Slide = ({title, right } : SlideProps) => {
     const transform= [
         {translateY: (SLIDE_HEIGHT - 100)/2}, 
         {translateX: right ? (width / 2 -50): (-width / 2 + 50)},
@@ -35,8 +46,10 @@ const Slide = ({title, right} : SlideProps) => {
     ];
     return (
         <View style={styles.container}>
+           
             <View style={[styles.titleContainer,{transform}]}>
-                <Text style={styles.title}>{title}</Text>
+                {/* <Text style={styles.tittle}>{title}</Text> */}
+                <Text variant="hero">{title}</Text>
             </View>
         </View>
     )

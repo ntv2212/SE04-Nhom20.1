@@ -160,7 +160,7 @@ const Onboarding = ({ navigation }: StackNavigationProps<Routes, "Onboarding">) 
                                     key={index}
                                     onPress={() => {
                                         if (last) {
-                                            navigation.navigate("Wellcome");
+                                            navigation.navigate("Welcome");
                                         }
                                         else {
                                             scroll.current

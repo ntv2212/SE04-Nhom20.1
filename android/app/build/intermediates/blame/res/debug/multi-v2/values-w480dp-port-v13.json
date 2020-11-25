@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\EShop\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",
+            "outputFile": "C:\\Users\\Admin\\Desktop\\CnpmProject\\SE04-Nhom20.1\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Admin\\.gradle\\caches\\transforms-2\\files-2.1\\7b4521e09033db39989053c4a0984cc2\\material-1.1.0\\res\\values-w480dp-port-v13\\values-w480dp-port-v13.xml",

@@ -39,7 +39,7 @@ const SubSlide = ({ subtitle, description, last, onPress }: SubSlidePops) => {
             {/* <Text style={styles.subtitle}>{subtitle}</Text>
             <Text style={styles.description}>{description}</Text> */}
             <Text variant="title2"  style={styles.subtitle}>{subtitle}</Text>
-            <Text variant="body" style={styles.description}>{description}</Text>
+            <Text variant= "body" style={styles.description}>{description}</Text>
             <Button 
                 label={last ? "Let's get started" : "Next"} 
                 variant={last ?"primary":"default"}   

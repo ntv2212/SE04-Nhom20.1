@@ -2,7 +2,7 @@
 import React, { ReactNode } from 'react';
 import { Dimensions, Image, StatusBar, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Box } from './Theme';
+import theme, { Box } from './Theme';
 export const assets = [require("./assets/patterns/2.png")];
 const { width } = Dimensions.get("window");
 const aspectRatio = 750 / 1125;
@@ -17,13 +17,26 @@ interface ContainerProps {
 const Container = ({ children, footer }: ContainerProps) => {
     const insets = useSafeAreaInsets();
     return (
-        <Box flex={1} backgroundColor="white">
+        <Box flex={1} backgroundColor="secondary">
             <StatusBar barStyle="light-content" />
-            <Box borderBottomLeftRadius="xl" overflow="hidden" height={height * 0.61} >
-                <Image source={assets[0]} style={{ width, height }} />
+            <Box  backgroundColor="white">
+                <Box borderBottomLeftRadius="xl" 
+                    overflow="hidden" 
+                    height={height * 0.61} 
+                >
+                    <Image 
+                        source={assets[0]} 
+                        style={{ 
+                            width, 
+                            height, 
+                            borderBottomLeftRadius:theme.borderRadii.xl
+                        }} 
+                    />
+                </Box>
             </Box>
             <Box flex={1} overflow="hidden">
-                <Image source={assets[0]}
+                <Image 
+                    source={assets[0]}
                     style={{
                         ...StyleSheet.absoluteFillObject,
                         width,
@@ -34,8 +47,8 @@ const Container = ({ children, footer }: ContainerProps) => {
                 <Box
                     flex={1}
                     backgroundColor="white"
-                    borderBottomLeftRadius="xl"
-                    borderBottomRightRadius="xl"
+                    borderRadius="xl"
+                    borderTopLeftRadius={0}
                 >
                     {children}
                 </Box>

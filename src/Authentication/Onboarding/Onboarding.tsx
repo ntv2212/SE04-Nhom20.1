@@ -11,6 +11,7 @@ import { Routes, StackNavigationProps } from 'src/components/Navigation'
 import { theme } from '../../components'
 
 const { width } = Dimensions.get("window")
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     }
 });
+
 const slides = [
     {
         title: "Relaxed",
@@ -93,6 +95,7 @@ const slides = [
         }
     },
 ]
+
 const Onboarding = ({ navigation }: StackNavigationProps<Routes, "Onboarding">) => {
     const scroll = useRef<Animated.ScrollView>(null);
     const { scrollHandler, x } = useScrollHandler()

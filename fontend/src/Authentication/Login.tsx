@@ -5,7 +5,7 @@ import { Box, Button, Container, Text } from "../components"
 import TextInput from './components/Form/TextInput';
 import CheckBox from './components/Form/CheckBox';
 
-import { Formik } from 'formik';
+import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup';
 import Footer from './components/Footer';
 import { Routes, StackNavigationProps } from '../components/Navigation';
@@ -26,17 +26,17 @@ const LoginSchema = Yup.object().shape({
 // const passwordValidator = (password: string) => password.length >=6  ;
 const Login = ({ navigation }: StackNavigationProps<Routes, "Login">) => {
      
-    // const { 
-    //     handleChange, 
-    //     handleBlur, 
-    //     handleSubmit, 
-    //     values,
-    //     errors, 
-    //     touched, 
-    //     setFieldValue
-    // } = useFormik({validationSchema:{LoginSchema},
-    //     initialValues:{ email: '', password: '',remember:true},
-    //     onSubmit:(values) => console.log(values)});
+    const { 
+        handleChange, 
+        handleBlur, 
+        handleSubmit, 
+        values,
+        errors, 
+        touched, 
+        setFieldValue
+    } = useFormik({validationSchema:LoginSchema,
+        initialValues:{ email: '', password: '',remember:true},
+        onSubmit:(values) => console.log(values)});
     const password = useRef<RNTextInput>(null);
     const footer =(
         <Footer 
@@ -62,7 +62,7 @@ const Login = ({ navigation }: StackNavigationProps<Routes, "Login">) => {
                 >
                     Use your credentials below and login to your account
                 </Text>
-                <Formik
+                {/* <Formik
                     validationSchema={LoginSchema}
                     initialValues={{ email: "", password: "", remember: true }}
                     onSubmit={(values) => console.log(values)}
@@ -75,7 +75,7 @@ const Login = ({ navigation }: StackNavigationProps<Routes, "Login">) => {
                         touched,
                         values,
                         setFieldValue
-                    }) => (
+                    }) => ( */}
                             <Box>
                                 <Box marginBottom="m">
                                     <TextInput
@@ -135,8 +135,8 @@ const Login = ({ navigation }: StackNavigationProps<Routes, "Login">) => {
                                     />
                                 </Box>
                             </Box>
-                        )}
-                </Formik>
+                        {/* )}
+                </Formik> */}
             </Box>
         </Container>
     );

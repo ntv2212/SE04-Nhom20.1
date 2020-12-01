@@ -4,7 +4,7 @@ import { TextInput as RNTextInput } from 'react-native';
 import { Box, Button, Container, Text } from "../components"
 import TextInput from './components/Form/TextInput';
 
-import { Formik } from 'formik';
+import {  useFormik } from 'formik';
 import * as Yup from 'yup';
 import Footer from './components/Footer';
 import { Routes, StackNavigationProps } from '../components/Navigation';
@@ -28,17 +28,17 @@ const SignUpSchema = Yup.object().shape({
 // const passwordValidator = (password: string) => password.length >=6  ;
 const SignUp = ({ navigation }: StackNavigationProps<Routes, "SignUp">) => {
 
-    // const { 
-    //     handleChange, 
-    //     handleBlur, 
-    //     handleSubmit, 
-    //     values,
-    //     errors, 
-    //     touched, 
-    //     setFieldValue
-    // } = useFormik({validationSchema:{LoginSchema},
-    //     initialValues:{ email: '', password: '',remember:true},
-    //     onSubmit:(values) => console.log(values)});
+    const { 
+        handleChange, 
+        handleBlur, 
+        handleSubmit, 
+        
+        errors, 
+        touched, 
+        
+    } = useFormik({validationSchema:SignUpSchema,
+        initialValues:{ email: '', password: '',passwordConfirmation:'',remember:true},
+        onSubmit:(values) => console.log(values)});
     const password = useRef<RNTextInput>(null);
     const passwordConfirmation = useRef<RNTextInput>(null);
     const footer = (
@@ -65,7 +65,7 @@ const SignUp = ({ navigation }: StackNavigationProps<Routes, "SignUp">) => {
                 >
                     Let's us know what ur name, email, and ur password
                 </Text>
-                <Formik
+                {/* <Formik
                     validationSchema={SignUpSchema}
                     initialValues={{ email: "", password: "", passwordConfirmation: "", remember: true }}
                     onSubmit={(values) => console.log(values)}
@@ -77,7 +77,7 @@ const SignUp = ({ navigation }: StackNavigationProps<Routes, "SignUp">) => {
                         errors,
                         touched,
 
-                    }) => (
+                    }) => ( */}
                             <Box>
                                 <Box marginBottom="m">
                                     <TextInput
@@ -145,8 +145,8 @@ const SignUp = ({ navigation }: StackNavigationProps<Routes, "SignUp">) => {
                                     />
                                 </Box>
                             </Box>
-                        )}
-                </Formik>
+                        {/* )}
+                </Formik> */}
             </Box>
         </Container>
     );

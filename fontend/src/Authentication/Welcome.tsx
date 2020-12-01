@@ -1,18 +1,18 @@
 
 import React from 'react'
-import theme, { Box, Text } from '../../components/Theme'
+import { Box, Text,useTheme } from '../components/Theme'
 import { Dimensions, Image } from "react-native"
-import { Button } from '../../components';
-import { Routes, StackNavigationProps } from 'src/components/Navigation';
+import { Button } from '../components';
+import { Routes, StackNavigationProps } from '../components/Navigation';
 
 const { width } = Dimensions.get("window");
 const picture = {
-    src: require('../assets/1.png'),
+    src: require('./assets/1.png'),
     width: 3383,
     height: 5074,
 }
 const Welcome = ({ navigation }: StackNavigationProps<Routes, "Welcome">) => {
-
+    const theme = useTheme();
     return (
         <Box flex={1} backgroundColor="white">
             <Box flex={1}

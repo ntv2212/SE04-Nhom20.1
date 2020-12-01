@@ -1,9 +1,9 @@
 import React from "react";
 import { ReactNode } from "react";
 import Svg, { LinearGradient, Path, Stop } from "react-native-svg"
-import { Box, theme } from "../../components";
+import { Box, useTheme } from "../../components";
 
-const SIZE = theme.borderRadii.l * 2;
+//const SIZE = theme.borderRadii.l * 2;
 const Google = () => (<Svg
     // xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 45 45"
@@ -157,6 +157,8 @@ interface SocialIconProps {
     children: ReactNode;
 }
 const SocialIcon = ({ children }: SocialIconProps) => {
+    const theme = useTheme();
+    const SIZE = theme.borderRadii.l * 2;
     return (
         <Box
             marginHorizontal="s"

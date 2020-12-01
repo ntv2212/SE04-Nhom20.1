@@ -1,6 +1,6 @@
 
 import React, { useRef } from 'react'
-import { View, StyleSheet, Dimensions, Image } from 'react-native'
+import { View, StyleSheet, Dimensions, Image} from 'react-native'
 
 import Animated, { divide, Extrapolate, interpolate, multiply } from 'react-native-reanimated'
 import { interpolateColor, useScrollHandler } from 'react-native-redash'
@@ -8,11 +8,21 @@ import Slide, { SLIDE_HEIGHT } from "./Slide"
 import SubSlide from './SubSlide'
 import Dot from './Dot'
 import { Routes, StackNavigationProps } from 'src/components/Navigation'
-import { theme } from '../../components'
+import { useTheme } from '../../components'
+import { makeStyles, Theme } from '../../components/Theme'
 
 const { width } = Dimensions.get("window")
+    // type NamedStyles<T> = { [P in keyof T]: ViewStyle | TextStyle | ImageStyle };
+    // const makeStyles =<T extends NamedStyles<T>>(
+    //     styles :(
+    //         theme : Theme
+    //     )=> T
+    // )=> () => {
+    //     const theme = useTheme();
+    //     return styles(theme);
+    // };
 
-const styles = StyleSheet.create({
+const useStyles = makeStyles((theme: Theme) => ({
     container: {
         flex: 1,
         backgroundColor: "white"
@@ -46,7 +56,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     }
-});
+}));
 
 const slides = [
     {
@@ -97,6 +107,8 @@ const slides = [
 ]
 
 const Onboarding = ({ navigation }: StackNavigationProps<Routes, "Onboarding">) => {
+    const styles = useStyles();
+    const theme = useTheme();
     const scroll = useRef<Animated.ScrollView>(null);
     const { scrollHandler, x } = useScrollHandler()
     const backgroundColor = interpolateColor(x, {

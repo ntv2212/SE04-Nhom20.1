@@ -1,53 +1,58 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Feather';
-import { Box, Button, Container,Text ,CloseButton} from '../components';
+import { Box, Button, Container, Text, RoundedIconButton, RoundedIcon } from '../components';
 
-import { Routes, StackNavigationProps } from '../components/Navigation';
+import {  AuthNavigationProps } from '../components/Navigation';
 
-const SIZE=80
-const PasswordChanged = ({ navigation }: StackNavigationProps<Routes, "PasswordChanged">) =>{
+const SIZE = 80
+const PasswordChanged = ({ navigation }: AuthNavigationProps<"PasswordChanged">) => {
     return (
-        <Container 
+        <Container
+            pattern={0}
             footer={
-                <Box flexDirection="row" justifyContent="center">
-                    <CloseButton 
-                        onPress={() => navigation.pop()}
-                    />
+                <Box flexDirection="row" justifyContent="center" marginBottom="m">
+                    <RoundedIconButton
+                        iconRatio={0.5}
+                        name="x"
+                        backgroundColor="white"
+                        color="secondary"
+                        size={60}
+                        onPress={() => navigation.pop()} />
                 </Box>
             }
         >
-            <Box flex={1} justifyContent="center" alignItems="center">
-            <Box marginBottom="xl" backgroundColor="primaryLight" justifyContent="center" alignItems="center" style={{height: SIZE, width: SIZE, borderRadius:SIZE/2}}>
-                <Text   textAlign="center" >
-
-                <Icon name = "check" size={32}/>
-                </Text>
+            <Box alignItems="center">
+                <RoundedIcon
+                    iconRatio={0.5}
+                    name="check"
+                    size={SIZE}
+                    backgroundColor="primaryLight"
+                    color="primary" />
             </Box>
-             <Text
-                    variant="title2"
-                    textAlign="center"
-                    marginBottom="l"
-                >
-                    Forgot Password
+            <Text
+                variant="title2"
+                textAlign="center"
+                marginVertical="l"
+            >
+                Your password was successfully changed
                 </Text>
-                <Text
-                    textAlign="center"
-                    variant="body"
-                    marginBottom="l"
-                >
-                    Enter the email associated with your account
+            <Text
+                textAlign="center"
+                variant="body"
+                marginBottom="l"
+            >
+                Close this window and login again
                 </Text>
-                <Box
-                                    alignItems="center"
-                                    marginTop="m"
-                                >
-                                    <Button
-                                        variant="primary"
-                                        onPress={() => navigation.navigate("Login")}
-                                        label="Reset password"
-                                    />
-                                </Box>
-                                </Box>
+            <Box
+                alignItems="center"
+                marginTop="m"
+            >
+                <Button
+                    variant="primary"
+                    onPress={() => navigation.navigate("Login")}
+                    label="Reset password"
+                />
+            </Box>
         </Container>
     );
 };

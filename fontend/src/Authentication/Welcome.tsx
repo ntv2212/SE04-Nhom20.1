@@ -1,9 +1,10 @@
 
 import React from 'react'
-import { Box, Text,useTheme } from '../components/Theme'
+import { Box, Text, useTheme } from '../components/Theme'
 import { Dimensions, Image } from "react-native"
 import { Button } from '../components';
-import { Routes, StackNavigationProps } from '../components/Navigation';
+import { AuthNavigationProps } from '../components/Navigation';
+import { BorderlessButton } from 'react-native-gesture-handler';
 
 const { width } = Dimensions.get("window");
 const picture = {
@@ -11,7 +12,7 @@ const picture = {
     width: 3383,
     height: 5074,
 }
-const Welcome = ({ navigation }: StackNavigationProps<Routes, "Welcome">) => {
+const Welcome = ({ navigation }: AuthNavigationProps<"Welcome">) => {
     const theme = useTheme();
     return (
         <Box flex={1} backgroundColor="white">
@@ -51,17 +52,18 @@ const Welcome = ({ navigation }: StackNavigationProps<Routes, "Welcome">) => {
                     <Button
                         variant="primary"
                         label="Have an account? Login "
-                        onPress={() => true}
-                    />
-                    <Button
-                        label="Join us, it't Free "
                         onPress={() => navigation.navigate("Login")}
                     />
                     <Button
-                        variant="transparent"
-                        label="Forgot password "
-                        onPress={() => true}
+                        label="Join us, it't Free "
+                        onPress={() => navigation.navigate("SignUp")}
                     />
+
+                    <BorderlessButton
+                        onPress={() => navigation.navigate("ForgotPassword")}
+                    >
+                        <Text variant="button"  color="secondary">ForgotPassword</Text>
+                    </BorderlessButton>
                 </Box>
             </Box>
         </Box>

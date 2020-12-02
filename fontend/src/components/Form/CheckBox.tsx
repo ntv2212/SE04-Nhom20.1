@@ -1,7 +1,7 @@
 import React  from 'react'
-import { RectButton } from 'react-native-gesture-handler';
+import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Feather';
-import { Box, Text } from '../../../components';
+import { Box, Text } from '../Theme';
 
 interface CheckboxProps {
     label: string
@@ -12,7 +12,7 @@ interface CheckboxProps {
 const Checkbox = ({ label,onChange,checked }: CheckboxProps) => {
    // const [checked, setChecked] = useState(defaultValue);
     return (
-        <RectButton 
+        <BorderlessButton 
             onPress={() => onChange()}
             style={{ justifyContent: 'center' }}
         >
@@ -31,7 +31,7 @@ const Checkbox = ({ label,onChange,checked }: CheckboxProps) => {
             </Box>
                 <Text variant="button" >{label}</Text>
             </Box>
-        </RectButton>
+        </BorderlessButton>
     );
 }
 

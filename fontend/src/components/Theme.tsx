@@ -10,7 +10,7 @@ export const theme = {
     white: "white",
     grey: "#F4F0EF",
     darkGrey: "#8A8D90",
-    danger :"#FF0058",
+    danger: "#FF0058",
     primaryLight: "#E7F9F7"
   },
   spacing: {
@@ -47,9 +47,9 @@ export const theme = {
       color: "text",
     },
     button: {
-      fontSize: 15,
+      fontSize: 12,
       color: "text",
-      textAlign:"center"
+      textAlign: "center"
     }
   },
   breakpoints: {}
@@ -59,13 +59,13 @@ export type Theme = typeof theme;
 export const Box = createBox<Theme>();
 export const Text = createText<Theme>();
 //export default theme;
-export const useTheme = () => useReTheme<Theme>()  
+export const useTheme = () => useReTheme<Theme>()
 type NamedStyles<T> = { [P in keyof T]: ViewStyle | TextStyle | ImageStyle };
-export const makeStyles =<T extends NamedStyles<T>>(
-        styles :(
-            theme : Theme
-        )=> T
-    )=> () => {
-        const currentTheme = useTheme();
-        return styles(currentTheme);
-    };
+export const makeStyles = <T extends NamedStyles<T>>(
+  styles: (
+    theme: Theme
+  ) => T
+) => () => {
+  const currentTheme = useTheme();
+  return styles(currentTheme);
+};

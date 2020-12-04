@@ -45,5 +45,6 @@ public class ProductController {
 	public ResponseEntity<String> deleteProduct(@PathVariable("id") Integer id){
 		repository.deleteById(id);
 		return new ResponseEntity<String>("Product has been deleted !", HttpStatus.OK);
-	}	
+	}
+	
 }

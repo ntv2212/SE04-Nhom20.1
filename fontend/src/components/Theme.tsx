@@ -9,9 +9,15 @@ export const theme = {
     text: "rgba(12,13,52,0.7)",
     white: "white",
     grey: "#F4F0EF",
-    darkGrey: "#8A8D90",
     danger: "#FF0058",
-    primaryLight: "#E7F9F7"
+    lightGrey: "#FAFAFA",
+    darkGrey:"#808080",
+    primaryLight: "#E7F9F7",
+    orange: "#FE5E33",
+    yellow: "#FFC641",
+    pink:"#FF87A2",
+    violet: "#442CB9",
+    lightBlue:"#BFEAF5"
   },
   spacing: {
     s: 8,
@@ -41,15 +47,24 @@ export const theme = {
       lineHeight: 30,
       color: "secondary",
     },
+    title3: {
+      fontSize: 16,
+      color: "secondary",
+    },
     body: {
       fontSize: 16,
       lineHeight: 24,
       color: "text",
     },
     button: {
-      fontSize: 12,
+      fontSize: 14,
       color: "text",
       textAlign: "center"
+    },
+    header: {
+      fontSize: 13,
+      lineHeight:24,
+      color: "secondary",
     }
   },
   breakpoints: {}

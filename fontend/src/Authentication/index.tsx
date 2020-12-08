@@ -19,6 +19,6 @@ export const AuthenticationNavigator = () => {
       <AuthenticationStack.Screen name="SignUp" component={SignUp} />
       <AuthenticationStack.Screen name="ForgotPassword" component={ForgotPassword} />
       <AuthenticationStack.Screen name="PasswordChanged" component={PasswordChanged} />
-    </AuthenticationStack.Navigator>
+      </AuthenticationStack.Navigator>
   )
 };

@@ -5,14 +5,11 @@ import { Box, Button, Container, Text } from "../components"
 import TextInput from '../components/Form/TextInput';
 import CheckBox from '../components/Form/CheckBox';
 
-import { Formik, useFormik } from 'formik';
+import {  useFormik } from 'formik';
 import * as Yup from 'yup';
 import Footer from './components/Footer';
-import { AppRoutes, AuthenticationRoutes, AuthNavigationProps, HomeRoutes } from '../components/Navigation';
+import {   AuthNavigationProps  } from '../components/Navigation';
 import { BorderlessButton } from 'react-native-gesture-handler';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { DrawerNavigationProp } from '@react-navigation/drawer';
-import { CompositeNavigationProp } from '@react-navigation/native';
 
 const LoginSchema = Yup.object().shape({
     password: Yup.string()

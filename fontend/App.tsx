@@ -7,10 +7,11 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from "@shopify/restyle";
 
 import { createStackNavigator } from "@react-navigation/stack";
-import { HomeNavigator } from "./src/Home";
+import { HomeNavigator, assets as homeAssests } from "./src/Home";
 import { AppRoutes } from "src/components/Navigation";
+// import { assets as authenticationAssets } from "./src/Authentication";
 
-
+const assets =[ ...homeAssests]
 
 const AppStack = createStackNavigator<AppRoutes>();
 export default function App() {

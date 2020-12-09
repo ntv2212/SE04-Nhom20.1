@@ -4,7 +4,7 @@ import React from "react";
 import { Dimensions, Image } from "react-native";
 import DrawerItem, { DrawerItemProps } from "./DrawerItem";
 import { Header,Box,Text } from "../../components";
-import { DrawerActions, useNavigation } from "@react-navigation/native";
+import { CommonActions, DrawerActions, useNavigation } from "@react-navigation/native";
 export const assets = [require("./assets/2.png")]
 
 const { width } = Dimensions.get("window");
@@ -44,7 +44,13 @@ const items: DrawerItemProps[] = [
     {
         icon: "log-out",
         label: 'Logout',
-        screen: "Logout",
+        onPress:(navigation) => navigation.dispatch(CommonActions.reset({
+            index:0,
+            routes:[
+                {name: "Authentication"},
+
+            ]
+        })),
         color: "secondary"
     },
 
@@ -56,7 +62,7 @@ const Drawer = () => {
     const height = width * aspectRatio;
     return (
         <Box flex={1}>
-            <Box flex={0.2} backgroundColor="white">
+            <Box flex={0.2} backgroundColor="background">
                 <Box position="absolute"
                     top={0}
                     left={0}
@@ -80,7 +86,7 @@ const Drawer = () => {
                     left={0}
                     right={0}
                     bottom={0}
-                    backgroundColor="white"
+                    backgroundColor="background"
                     borderTopLeftRadius="xl"
                     borderBottomRightRadius="xl"
                     justifyContent="center"
@@ -107,7 +113,7 @@ const Drawer = () => {
                     ))}
                 </Box>
             </Box>
-            <Box backgroundColor="secondary"
+            <Box backgroundColor="background"
                 overflow="hidden"
                 width={DRAWER_WIDTH}
                 height={height * 0.61}

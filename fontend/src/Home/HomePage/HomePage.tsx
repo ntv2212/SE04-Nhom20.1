@@ -33,7 +33,7 @@ const HomePage = ({ navigation }: HomeNavigationProps<"HomePage">) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const aIndex = useTransition(currentIndex)
     return (
-        <Box flex={1} backgroundColor="white">
+        <Box flex={1} backgroundColor="background">
             <Header title="Home Page"
                 left={{ icon: "menu", onPress: () => navigation.openDrawer() }}
                 right={{ icon: "shopping-bag", onPress: () => true }}

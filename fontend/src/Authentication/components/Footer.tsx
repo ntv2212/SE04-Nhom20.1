@@ -16,7 +16,7 @@ const Footer = ({onPress, title , action}: FooterProps) => {
             <SocialLogin />
             <Box alignItems="center" marginTop="m">
                 <BorderlessButton {...{onPress}}>
-                    <Text variant="button" color="white" marginBottom="m">
+                    <Text variant="button" color="background" marginBottom="m">
                         <Text >{`${title}`}</Text>
                         <Text color="primary">{action}</Text>
                     </Text>

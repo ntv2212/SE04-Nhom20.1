@@ -75,7 +75,8 @@ const Favorites = ({ navigation }: HomeNavigationProps<"Favorite">) => {
 
     const transition =
         <Transition.Together>
-            <Transition.Change interpolation="easeInOut" durationMs={1000}/>
+            <Transition.Out type="fade"/>
+            <Transition.In type="fade" />
         </Transition.Together>;
     const [outfits, setOutfit] = useState(defauOutfits);
     const list = useRef<TransitioningView>(null);
@@ -83,7 +84,7 @@ const Favorites = ({ navigation }: HomeNavigationProps<"Favorite">) => {
     const width = (wWidth - theme.spacing.m * 3) / 2;
     const [footerHeight, setFooterHeight] = useState(0);
     return (
-        <Box flex={1} backgroundColor="white">
+        <Box flex={1} backgroundColor="background">
             <Header title="Favorite" 
                 left={{ icon: "menu", onPress: () => navigation.openDrawer() }}
                 right={{ icon: "shopping-bag", onPress: () => true }}
@@ -96,7 +97,7 @@ const Favorites = ({ navigation }: HomeNavigationProps<"Favorite">) => {
                 ><Transitioning.View ref={list} transition={transition}>
                         <Box flexDirection="row" >
                             <Box marginRight="m">
-                                {outfits.filter(({ id }) => id % 2 !== 0).map(
+                                {outfits.filter((_,i) => i % 2 !== 0).map(
                                     (outfit) => <Outfit
                                         key={outfit.id}
                                         outfit={outfit}
@@ -105,7 +106,7 @@ const Favorites = ({ navigation }: HomeNavigationProps<"Favorite">) => {
                                 )}
                             </Box>
                             <Box>
-                                {outfits.filter(({ id }) => id % 2 === 0).map(
+                                {outfits.filter((_,i) => i % 2 === 0).map(
                                     (outfit) => <Outfit
                                         key={outfit.id}
                                         outfit={outfit}

@@ -50,7 +50,7 @@ const TextInput = forwardRef<RnTextInput, TextInputProps>(
                         name={!error ? "check" : "x"} 
                         size={SIZE}    
                         backgroundColor={!error ? "primary" : "danger"} 
-                        color="white"/>
+                        color="background"/>
                 )}
             </Box>
         );

@@ -30,7 +30,7 @@ const Container = ({ children, footer, pattern }: ContainerProps) => {
         <KeyboardAwareScrollView scrollEnabled={false}>
             <Box height={wHeight} backgroundColor="secondary">
                 <StatusBar barStyle="light-content" />
-                <Box backgroundColor="white">
+                <Box backgroundColor="background">
                     <Box borderBottomLeftRadius="xl"
                         overflow="hidden"
                         height={height * 0.61}
@@ -57,7 +57,7 @@ const Container = ({ children, footer, pattern }: ContainerProps) => {
                     />
                     <Box
                         flex={1}
-                        backgroundColor="white"
+                        backgroundColor="background"
                         borderRadius="xl"
                         borderTopLeftRadius={0}
                         justifyContent="center"

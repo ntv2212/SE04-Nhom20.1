@@ -1,4 +1,4 @@
-import React, { forwardRef, RefObject } from "react";
+import React, { forwardRef, } from "react";
 import {
     TextInput as RnTextInput,
     StyleSheet,

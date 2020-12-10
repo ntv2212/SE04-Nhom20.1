@@ -1,6 +1,6 @@
 
 import React, { ReactNode } from 'react';
-import { Dimensions, Image, Platform, StatusBar, StyleSheet } from 'react-native';
+import { Dimensions, Image,  StatusBar, StyleSheet } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Box, useTheme } from './Theme';

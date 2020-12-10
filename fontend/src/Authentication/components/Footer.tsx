@@ -1,5 +1,5 @@
 import React from 'react'
-import { BorderlessButton, TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { BorderlessButton } from 'react-native-gesture-handler';
 
 import { Box, Text } from '../../components';
 import SocialLogin from './SocialLogin';

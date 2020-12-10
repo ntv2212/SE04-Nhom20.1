@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Dimensions } from 'react-native';
 import { BorderLessTap, Box, RoundedIcon } from '../../components';
 
-const { width: wWidth } = Dimensions.get("window");
+//const { width: wWidth } = Dimensions.get("window");
 
 interface OutfitProps {
     outfit: {

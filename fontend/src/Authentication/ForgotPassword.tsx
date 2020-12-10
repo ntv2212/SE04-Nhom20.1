@@ -1,4 +1,4 @@
-import { Formik, useFormik } from 'formik';
+import {  useFormik } from 'formik';
 import React from 'react';
 import { Linking } from 'react-native'
 import { Box, Container } from '../components';
@@ -22,7 +22,7 @@ const ForgotPassword = ({ navigation }:AuthNavigationProps<"ForgotPassword">) =>
     const {
         handleChange,
         handleBlur,
-        handleSubmit,
+        //handleSubmit,
 
         errors,
         touched,

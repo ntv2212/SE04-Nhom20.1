@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { interpolate, sub } from 'react-native-reanimated';
+import {  sub } from 'react-native-reanimated';
 
 import { useTransition } from 'react-native-redash';
 import { HomeNavigationProps } from 'src/components/Navigation';

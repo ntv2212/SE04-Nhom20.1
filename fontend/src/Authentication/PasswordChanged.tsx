@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/Feather';
+//import Icon from 'react-native-vector-icons/Feather';
 import { Box, Button, Container, Text, RoundedIconButton, RoundedIcon } from '../components';
 
 import {  AuthNavigationProps } from '../components/Navigation';

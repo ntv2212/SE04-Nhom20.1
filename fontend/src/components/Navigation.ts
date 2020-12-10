@@ -35,5 +35,6 @@ export type AuthenticationRoutes = {
 export type HomeRoutes = {
     HomePage: undefined;
     Favorite: undefined;
-    TransactionHistory: undefined;
+    TransactionHistory: undefined; 
+    EditProfile: undefined;
 }

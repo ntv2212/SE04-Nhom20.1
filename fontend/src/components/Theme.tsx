@@ -20,6 +20,7 @@ const theme = {
     primaryLight: "#E7F9F7",
     secondary: "#0C0D34",
     text: "rgba(12,13,52,0.7)",
+    textContrast: palette.white,
     background: palette.white,
     background2: "#F4F0EF",
     danger: "#FF0058",

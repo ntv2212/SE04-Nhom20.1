@@ -21,8 +21,8 @@ const useStyles = makeStyles((theme : Theme)=>({
 
     }
 }));
-const aspectRatio = 10
-const {width} = Dimensions.get("window")
+//const aspectRatio = 10
+//const {width} = Dimensions.get("window")
 const startDate = new Date("2020-09-01").getTime();
 const numberOfMonths = 6;
 

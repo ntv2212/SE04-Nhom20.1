@@ -1,5 +1,5 @@
 import React  from 'react'
-import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
+import { BorderlessButton,  } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Feather';
 import { Box, Text } from '../Theme';
 

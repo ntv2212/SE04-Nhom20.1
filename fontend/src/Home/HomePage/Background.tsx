@@ -1,11 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
-import { palette } from '../../components/Theme';
-import { Box, useTheme } from '../../components';
+import { View, StyleSheet, } from 'react-native';
+import { Box } from '../../components';
 
 
 const background = () => {
-    const theme = useTheme();
+    //const theme = useTheme();
     return (
         <View style={StyleSheet.absoluteFillObject}>
             <Box flex={1 / 3} style={{backgroundColor:"white"}}>

@@ -22,7 +22,7 @@ const theme = {
     text: "rgba(12,13,52,0.7)",
     textContrast: palette.white,
     background: palette.white,
-    background2: "#F4F0EF",
+    background2: "#F6F6F6",
     danger: "#FF0058",
     info: "#808080",
     lightGrey: "#FAFAFA",

@@ -37,8 +37,8 @@ const items: DrawerItemProps[] = [
     },
     {
         icon: "settings",
-        label: 'Setting',
-        screen: "Setting",
+        label: 'Settings',
+        screen: "Settings",
         color: "drawer4"
     },
     {

@@ -7,6 +7,7 @@ import Favorite from "./Favorite"
 import TransactionHistory from "./TransactionHistory"
 import { HomeRoutes } from "../components/Navigation";
 import EditProfile from "../Home/EditProfile"
+import Settings from "./Settings";
 
 export {assets } from "./Drawer"
 
@@ -20,5 +21,6 @@ export const HomeNavigator = () => (
     <Drawer.Screen name="Favorite" component={Favorite} />
     <Drawer.Screen name="TransactionHistory" component={TransactionHistory}/>
     <Drawer.Screen name="EditProfile" component={EditProfile}/>
+    <Drawer.Screen name="Settings" component={Settings}/>
   </Drawer.Navigator>
 );

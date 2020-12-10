@@ -19,7 +19,7 @@ const Transaction = ({ transaction }: Transaction) => {
                     />
                     <Text variant="title3">{`#${transaction.id}`}</Text>
                 </Box>
-                <Text color="darkGrey">{`$${transaction.value}-${moment(
+                <Text color="info">{`$${transaction.value}-${moment(
                     transaction.date
                     ).format("DD MM, YY")}`}</Text>
             </Box>

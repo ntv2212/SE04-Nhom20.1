@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
+import { palette } from '../../components/Theme';
 import { Box, useTheme } from '../../components';
 
 
@@ -7,7 +8,7 @@ const background = () => {
     const theme = useTheme();
     return (
         <View style={StyleSheet.absoluteFillObject}>
-            <Box flex={1 / 3} backgroundColor="background">
+            <Box flex={1 / 3} style={{backgroundColor:"white"}}>
                 <Box flex={1} backgroundColor="background" borderBottomRightRadius="xl" />
             </Box>
             <Box flex={1 / 3}>
@@ -23,7 +24,7 @@ const background = () => {
                     }}
                 /> */}
             </Box>
-            <Box flex={1 / 3} backgroundColor="background">
+            <Box flex={1 / 3} style={{backgroundColor:"white"}}>
                 <Box flex={1} backgroundColor="secondary" borderTopLeftRadius="xl"></Box>
             </Box>
         </View>

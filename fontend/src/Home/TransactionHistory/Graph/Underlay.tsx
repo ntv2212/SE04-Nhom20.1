@@ -33,11 +33,11 @@ const Underlay = ({ minY, maxY, step, startDate, numberOfMonths }: UnderlayProps
                                 }}
                             >
                                 <Box width={theme.spacing[MARGIN]} paddingRight="s">
-                                    <Text color="darkGrey" textAlign="right">
+                                    <Text color="info" textAlign="right">
                                         {Math.round(lerp(minY, maxY, t))}
                                     </Text>
                                 </Box>
-                                <Box flex={1} height={1} backgroundColor="grey"></Box>
+                                <Box flex={1} height={1} backgroundColor="background2"></Box>
                             </Box>
                         );
                     })
@@ -54,7 +54,7 @@ const Underlay = ({ minY, maxY, step, startDate, numberOfMonths }: UnderlayProps
                     .map((_, i) => minDate.clone().add(i, "month"))
                     .map((date, index) => (
                         <Box width={step} key={index}>
-                            <Text key={index} color="darkGrey" textAlign="center">
+                            <Text key={index} color="info" textAlign="center">
                                 {date.format("MMM")}
                             </Text>
                         </Box>

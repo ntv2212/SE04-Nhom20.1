@@ -59,7 +59,6 @@ const Container = ({ children, footer, pattern }: ContainerProps) => {
                         flex={1}
                         backgroundColor="background"
                         borderRadius="xl"
-                        borderTopLeftRadius={0}
                         justifyContent="center"
                         padding="xl"
                     >

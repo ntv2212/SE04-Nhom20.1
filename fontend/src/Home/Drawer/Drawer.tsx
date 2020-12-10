@@ -1,7 +1,7 @@
 
 
 import React from "react";
-import { Dimensions, Image } from "react-native";
+import { Dimensions } from "react-native";
 import DrawerItem, { DrawerItemProps } from "./DrawerItem";
 import { Header,Box,Text } from "../../components";
 import { CommonActions, DrawerActions, useNavigation } from "@react-navigation/native";
@@ -21,25 +21,25 @@ const items: DrawerItemProps[] = [
         icon: "heart",
         label: 'Favorites',
         screen: "Favorite",
-        color: "orange"
+        color: "drawer1"
     },
     {
         icon: "user",
         label: 'Edit Profile',
         screen: "EditProfile",
-        color: "yellow"
+        color: "drawer2"
     },
     {
         icon: "clock",
         label: 'Transaction History',
         screen: "TransactionHistory",
-        color: "pink"
+        color: "drawer3"
     },
     {
         icon: "settings",
         label: 'Setting',
         screen: "Setting",
-        color: "violet"
+        color: "drawer4"
     },
     {
         icon: "log-out",
@@ -113,7 +113,7 @@ const Drawer = () => {
                     ))}
                 </Box>
             </Box>
-            <Box backgroundColor="background"
+            <Box backgroundColor="secondary"
                 overflow="hidden"
                 width={DRAWER_WIDTH}
                 height={height * 0.61}

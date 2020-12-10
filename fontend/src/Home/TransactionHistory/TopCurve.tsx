@@ -2,6 +2,7 @@
 import React from 'react';
 
 import Svg, { Circle, ClipPath, Defs, Path, Rect } from 'react-native-svg';
+import { palette } from '../../components/Theme';
 import { useTheme } from '../../components';
 
 interface TopCurveProps {
@@ -20,7 +21,7 @@ const TopCurve = ({ footerHeight }: TopCurveProps) => {
         <Defs>
             <ClipPath id="clip">
 
-            <Path d="M 0 1 A 0 0, 0, 0, 0, 1 0 L 1 1" fill={theme.colors.secondary} />
+            <Path d="M 0 1 A 0 0, 0, 0, 0, 1 0 L 1 1" fill="black" />
             </ClipPath>
         </Defs>
         <Rect 
@@ -36,7 +37,7 @@ const TopCurve = ({ footerHeight }: TopCurveProps) => {
             cy={0.5}
             r={0.5}
             clipPath="url(#clip)" 
-            fill={theme.colors.orange}
+            fill={palette.orange}
         />
         </Svg>
     );

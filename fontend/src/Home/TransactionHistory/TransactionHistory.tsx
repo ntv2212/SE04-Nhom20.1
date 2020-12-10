@@ -2,9 +2,9 @@ import React from 'react'
 import { HomeNavigationProps } from 'src/components/Navigation';
 import Graph, { DataPoint } from "./Graph";
 import { Box, Header, makeStyles, Text } from '../../components';
-import { Dimensions, ScrollView, Image, StyleSheet, PixelRatio } from 'react-native';
+import { Dimensions, ScrollView, Image, StyleSheet } from 'react-native';
 import Transaction from './Transaction';
-import { Theme, theme } from 'src/components/Theme';
+import { Theme } from 'src/components/Theme';
 import TopCurve from './TopCurve';
 
 const footerHeight = Dimensions.get("window").width / 3;    
@@ -30,19 +30,19 @@ const data: DataPoint[] = [
     {
         date: new Date("2020-10-02").getTime(),
         value: 139.42,
-        color: "pink",
+        color: "secondary",
         id: 245672,
     },
     {
         date: new Date("2020-11-01").getTime(),
         value: 281.23,
-        color: "secondary",
+        color: "graph1",
         id: 245673,
     },
     {
         date: new Date("2021-02-01").getTime(),
         value: 198.54,
-        color: "yellow",
+        color: "graph2",
         id: 245674,
     },
 ]

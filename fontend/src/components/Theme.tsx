@@ -1,32 +1,36 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { createBox, createText, useTheme as useReTheme } from "@shopify/restyle"
 import { ThemeProvider as ReStyleThemeProvider } from "@shopify/restyle";
+import { TextStyle ,ImageStyle,ViewStyle } from "react-native";
 
-import { ReactNode } from "react";
-import { ImageStyle } from "react-native";
-import { TextStyle } from "react-native";
-import { ViewStyle } from "react-native";
 
-export const palette ={
+export const palette = {
+  green:"#2CB9B0",
   white: "white",
+  orange: "#FE5E33",
+  yellow: "#FFC641",
+  pink: "#FF87A2",
+  violet: "#442CB9",
+  lightBlue: "#BFEAF5"
 }
 
 const theme = {
   colors: {
-    primary: "#2CB9B0",
+    primary: palette.green,
+    primaryLight: "#E7F9F7",
     secondary: "#0C0D34",
     text: "rgba(12,13,52,0.7)",
     background: palette.white,
-    grey: "#F4F0EF",
+    background2: "#F4F0EF",
     danger: "#FF0058",
+    info: "#808080",
     lightGrey: "#FAFAFA",
-    darkGrey:"#808080",
-    primaryLight: "#E7F9F7",
-    orange: "#FE5E33",
-    yellow: "#FFC641",
-    pink:"#FF87A2",
-    violet: "#442CB9",
-    lightBlue:"#BFEAF5"
+    graph1: palette.orange,
+    graph2: palette.yellow,
+    drawer1:palette.orange,
+    drawer2:palette.yellow,
+    drawer3:palette.pink,
+    drawer4:palette.violet,
   },
   spacing: {
     s: 8,
@@ -72,15 +76,18 @@ const theme = {
     },
     header: {
       fontSize: 13,
-      lineHeight:24,
+      lineHeight: 24,
       color: "secondary",
     }
   },
-  breakpoints: {}
+  breakpoints: {
+    phone: 0,
+    tablet: 768,
+  }
 };
 
-export const ThemeProvider = ({children} : {children: ReactNode}) => (
-  <ReStyleThemeProvider {...{theme}}>
+export const ThemeProvider = ({ children }: { children: ReactNode }) => (
+  <ReStyleThemeProvider {...{ theme }}>
     {children}
   </ReStyleThemeProvider>
 )

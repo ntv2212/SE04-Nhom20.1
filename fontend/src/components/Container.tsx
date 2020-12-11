@@ -31,7 +31,7 @@ const Container = ({ children, footer, pattern }: ContainerProps) => {
             <Box height={wHeight} backgroundColor="secondary">
                 <StatusBar barStyle="light-content" />
                 <Box backgroundColor="background">
-                    <Box borderBottomLeftRadius="xl"
+                    <Box 
                         overflow="hidden"
                         height={height * 0.61}
                     >
@@ -45,7 +45,7 @@ const Container = ({ children, footer, pattern }: ContainerProps) => {
                         />
                     </Box>
                 </Box>
-                <Box flex={1} overflow="hidden">
+                <Box flex={1} overflow="hidden" >
                     <Image
                         source={asset}
                         style={{
@@ -62,10 +62,7 @@ const Container = ({ children, footer, pattern }: ContainerProps) => {
                         justifyContent="center"
                         padding="xl"
                     >
-
-
                         {children}
-
                     </Box>
                 </Box>
                 <Box backgroundColor="secondary" paddingTop="m" overflow="hidden">

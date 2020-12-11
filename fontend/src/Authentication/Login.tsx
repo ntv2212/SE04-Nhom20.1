@@ -86,7 +86,7 @@ const Login = ({ navigation }: AuthNavigationProps<"Login">) => {
                         setFieldValue
                     }) => ( */}
                 <Box>
-                    <Box marginBottom="m">
+                    <Box marginBottom="m" >
                         <TextInput
                             icon="mail"
                             placeholder="Enter your email"

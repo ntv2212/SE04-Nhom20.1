@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View,StyleSheet } from 'react-native';
-import { Box, Text,BorderLessTap } from "../../components";
+import { BorderlessButton } from 'react-native-gesture-handler';
+import { Box, Text } from "../../components";
 const INNER_RADIUS = 30;
 const OUTER_RADIUS = 34;
 interface CategoryProps {
@@ -13,7 +14,7 @@ interface CategoryProps {
 const Category = ({ category: { title, color: backgroundColor } }: CategoryProps) => {
     const [selected, setSelected] = useState(false);
     return (
-        <BorderLessTap onPress={() => setSelected((prev) => !prev)}>
+        <BorderlessButton onPress={() => setSelected((prev) => !prev)}>
             <Box
                 marginLeft="m"
                 marginTop="s"
@@ -46,7 +47,7 @@ const Category = ({ category: { title, color: backgroundColor } }: CategoryProps
                 </Box>
                 <Text textAlign="center" marginTop="s" variant="header">{title}</Text>
             </Box>
-        </BorderLessTap>
+        </BorderlessButton>
 
     );
 }

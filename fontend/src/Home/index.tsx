@@ -4,6 +4,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import DrawerContent,{DRAWER_WIDTH} from "./Drawer"
 import HomePage from "./HomePage"
 import Favorite from "./Favorite"
+import Cart from "./Cart"
 import TransactionHistory from "./TransactionHistory"
 import { HomeRoutes } from "../components/Navigation";
 import EditProfile from "../Home/EditProfile"
@@ -22,5 +23,6 @@ export const HomeNavigator = () => (
     <Drawer.Screen name="TransactionHistory" component={TransactionHistory}/>
     <Drawer.Screen name="EditProfile" component={EditProfile}/>
     <Drawer.Screen name="Settings" component={Settings}/>
+    <Drawer.Screen name="Cart" component={Cart}/>
   </Drawer.Navigator>
 );

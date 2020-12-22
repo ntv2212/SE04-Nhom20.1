@@ -1,13 +1,12 @@
 
 import React, { useState } from 'react';
-import {  sub } from 'react-native-reanimated';
 
-import { useTransition } from 'react-native-redash';
 import { HomeNavigationProps } from 'src/components/Navigation';
 import { Box, Header } from '../../components';
 import Background from './Background';
 import Categories from './Categories';
 import Card from './Card'
+import { useTiming } from 'react-native-redash';
 
 const cards = [
     {
@@ -31,25 +30,27 @@ const step = 1 / (cards.length - 1);
 
 const HomePage = ({ navigation }: HomeNavigationProps<"HomePage">) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const aIndex = useTransition(currentIndex)
+    const aIndex = useTiming(currentIndex)
     return (
         <Box flex={1} backgroundColor="background">
             <Header title="Home Page"
                 left={{ icon: "menu", onPress: () => navigation.openDrawer() }}
                 right={{ icon: "shopping-bag", onPress: () => true }}
             />
-             <Categories/>
+            <Categories />
             <Box flex={1}>
                 <Background />
-               
+
                 {cards.map((
-                    { index ,source },) =>
+                    { index, source },) =>
                     currentIndex < index * step + step && (
                         <Card
                             key={index}
-                            position={sub(index * step, aIndex)}
+                            index={index}
+                            aIndex={aIndex}
+                            step={step}
                             onSwipe={() => setCurrentIndex((prev) => prev + step)}
-                            {...{source,step}}
+                            {...{ source }}
                         />
                     ))
                 }

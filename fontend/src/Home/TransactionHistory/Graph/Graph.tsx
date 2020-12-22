@@ -8,7 +8,7 @@ import { Box, useTheme } from '../../../components';
 import Underlay, { MARGIN } from "./Underlay"
 import { lerp } from './Scale';
 import { useIsFocused } from '@react-navigation/native';
-import { useTransition } from 'react-native-redash';
+import { useTiming } from 'react-native-redash';
 
 const { width: wWidth } = Dimensions.get("window");
 const aspectRatio = 195 / 305;
@@ -31,7 +31,7 @@ interface GraphProps {
 
 const Graph = ({ data, startDate, numberOfMonths }: GraphProps) => {
     const isFocused = useIsFocused();
-    const transition = useTransition(isFocused, {duration: 1000});
+    const transition = useTiming(isFocused, {duration: 1000});
     const theme = useTheme();
     const canvasWidth = wWidth - theme.spacing.m * 2;
     const canvasHeight = canvasWidth * aspectRatio;

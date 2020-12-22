@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, StyleSheet } from 'react-native';
+import { Dimensions } from 'react-native';
 import Svg, { Path, Image, Defs, ClipPath } from 'react-native-svg';
 import { Box, useTheme } from './Theme';
 

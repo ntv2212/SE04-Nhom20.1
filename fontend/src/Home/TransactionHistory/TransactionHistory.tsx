@@ -90,11 +90,11 @@ const TransactionHistory = ({ navigation }: HomeNavigationProps<"TransactionHist
                         </Text>
                         </Box>
                     </Box>
-                    <Graph
+                    {/* <Graph
                         data={data}
                         startDate={startDate}
                         numberOfMonths={numberOfMonths}
-                    />
+                    /> */}
                     <ScrollView
                         contentContainerStyle={styles.scrollView}
                         showsVerticalScrollIndicator={false}

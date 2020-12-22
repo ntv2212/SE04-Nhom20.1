@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dimensions, StyleSheet, View, Image } from 'react-native';
-import Svg, { Path, Defs, ClipPath } from 'react-native-svg';
-import { Box, useTheme } from './Theme';
+import Svg, { Path } from 'react-native-svg';
+import { useTheme } from './Theme';
 
 const { width } = Dimensions.get("window")
 const viewBox = {

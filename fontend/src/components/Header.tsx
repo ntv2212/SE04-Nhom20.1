@@ -21,7 +21,6 @@ interface HeaderProps {
 const Header = ({ title, left, right, dark }: HeaderProps) => {
     // const insets = useSafeAreaInsets();
     const color = dark ? "background" : "secondary"
-    const backgroundColor = dark ? "secondary" : undefined;
     return (
         <Box flexDirection="row"
             style={{ marginTop: 20 }}
@@ -37,7 +36,7 @@ const Header = ({ title, left, right, dark }: HeaderProps) => {
                 //cái này méo center đc
                 // align={backgroundColor === undefined ? "flex-start" : "center"}
                 align="center"
-                {...{ color, backgroundColor }}
+                {...{ color, }}
             />
             <Text variant="header" {...{ color }}>{title.toUpperCase()}</Text>
             {right ?(
@@ -48,7 +47,7 @@ const Header = ({ title, left, right, dark }: HeaderProps) => {
                 onPress={right.onPress}
                 // align={backgroundColor === undefined ? "flex-end" : "center"}
                 align="center"
-                {...{ color, backgroundColor }}
+                {...{ color }}
             />
             ) : (
                 <View style={{width:44}}/>

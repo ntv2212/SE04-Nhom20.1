@@ -1,6 +1,6 @@
 import React from 'react'
 import { HomeNavigationProps } from 'src/components/Navigation';
-import Graph, { DataPoint } from "./Graph";
+import /*Graph,*/ { DataPoint } from "./Graph";
 import { Box, ScrollableContent, Header, makeStyles, Text } from '../../components';
 import { Dimensions, ScrollView, StyleSheet } from 'react-native';
 import Transaction from './Transaction';
@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 //const aspectRatio = 10
 //const {width} = Dimensions.get("window")
-const startDate = new Date("2020-09-01").getTime();
-const numberOfMonths = 6;
+//const startDate = new Date("2020-09-01").getTime();
+//const numberOfMonths = 6;
 
 const data: DataPoint[] = [
     {

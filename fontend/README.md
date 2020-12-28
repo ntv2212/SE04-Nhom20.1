@@ -12,8 +12,8 @@
 #### - Trường: Đại học Khoa học Tự nhiên, Đại học Quốc gia Hà Nội.
 #### - Khoa: Toán - Cơ - Tin học.
 ### Người hướng dẫn:
-#### - Thầy: [Bùi Sỹ Nguyên].
-#### - Anh: [Nguyễn Quan Tuấn].
+#### - Thầy: Bùi Sỹ Nguyên.
+#### - Anh: Nguyễn Quan Tuấn.
 
 ## **Thành viên nhóm**
 1) Nguyễn Trọng Vĩnh

@@ -16,11 +16,11 @@
 #### - Anh: [Nguyễn Quan Tuấn].
 
 ## **Thành viên nhóm**
-1) [Nguyễn Trọng Vĩnh]
-2) [Nguyễn Thành Vinh]
-3) [Nguyễn Thiệu Đắc]
-4) [Trương Thanh Tùng]
-5) [Trần Bá Tuấn]
+1) Nguyễn Trọng Vĩnh
+2) Nguyễn Thành Vinh
+3) Nguyễn Thiệu Đắc
+4) Trương Thanh Tùng
+5) Trần Bá Tuấn
 
 ## **Ý tưởng**
 

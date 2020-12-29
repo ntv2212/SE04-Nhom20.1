@@ -7,11 +7,16 @@ import Background from './Background';
 import Categories from './Categories';
 import Card from './Card'
 import { useTiming } from 'react-native-redash';
+import {firebaseRN } from '../../Severs/firebaseConfig';
+
+const storage = firebaseRN.storage();
+
+//const imageRef = storage.ref('image').child(`aodai.jpg`);
 
 const cards = [
     {
         index: 3,
-        source: require('../../Authentication/assets/4.png')
+        source: require(storage.refFromURL('gs://fir-demo-a3e0d.appspot.com/image/aodai.jpg'))
     },
     {
         index: 2,

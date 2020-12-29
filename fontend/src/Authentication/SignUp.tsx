@@ -1,26 +1,13 @@
 
-import React, { useRef } from 'react'
-import { TextInput as RNTextInput } from 'react-native';
+import React, { useRef, useState } from 'react'
+import { TextInput as RNTextInput, Alert } from 'react-native';
 import { Box, Button, Container, Text } from "../components"
 import TextInput from '../components/Form/TextInput';
-
+import { firebaseRN} from '../Severs/firebaseConfig';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Footer from './components/Footer';
 import {  AuthNavigationProps } from '../components/Navigation';
-
-const SignUpSchema = Yup.object().shape({
-    password: Yup.string()
-        .min(2, 'Too Short!')
-        .max(50, 'Too Long!')
-        .required('Required'),
-    passwordConfirmation: Yup.string()
-        .equals([Yup.ref("password")], "Password dont match")
-        .required('Required'),
-    email: Yup.string()
-        .email('Invalid email')
-        .required('Required'),
-});
 
 // const emailValidator = (email: string) =>
 //     // /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -28,11 +15,51 @@ const SignUpSchema = Yup.object().shape({
 // const passwordValidator = (password: string) => password.length >=6  ;
 const SignUp = ({ navigation }: AuthNavigationProps<"SignUp">) => {
 
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const SignUpSchema = Yup.object().shape({
+        password: Yup.string()
+            .min(2, 'Too Short!')
+            .max(50, 'Too Long!')
+            .required('Required'),
+        passwordConfirmation: Yup.string()
+            .equals([Yup.ref("password")], "Password dont match")
+            .required('Required'),
+        email: Yup.string()
+            .email('Invalid email')
+            .required('Required'),
+    });
+
+    const ClickSubmit = () =>
+    {
+        firebaseRN
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(() => {
+            Alert.alert(
+                'Alert Title',
+                'Dang ki thanh cong : ' + email,
+                [
+                    {text : 'OK', onPress:() => navigation.navigate('Login')}
+                ]
+            )
+        }
+        ).catch(() =>{
+            Alert.alert(
+                'Alert Title',
+                'Dang ki that bai !',
+                [
+                    {text : 'OK', onPress: () => navigation.navigate('SignUp')}
+                ]
+            )
+        }
+        )
+    }
     const {
         handleChange,
         handleBlur,
         handleSubmit,
-
         errors,
         touched,
 
@@ -41,7 +68,6 @@ const SignUp = ({ navigation }: AuthNavigationProps<"SignUp">) => {
         initialValues: { email: '', password: '', passwordConfirmation: '', remember: true },
         onSubmit:(values) => console.log(values)
     });
-    const password = useRef<RNTextInput>(null);
     const passwordConfirmation = useRef<RNTextInput>(null);
     const footer = (
         <Footer
@@ -52,7 +78,6 @@ const SignUp = ({ navigation }: AuthNavigationProps<"SignUp">) => {
     );
     return (
         <Container pattern={0}{...{ footer }}>
-
             <Text
                 variant="title2"
                 textAlign="center"
@@ -86,7 +111,7 @@ const SignUp = ({ navigation }: AuthNavigationProps<"SignUp">) => {
                         icon="mail"
                         placeholder="Enter your email"
                         //validator={emailValidator} 
-                        onChangeText={handleChange('email')}
+                        onChangeText={email => setEmail(email)}
                         onBlur={handleBlur('email')}
                         error={errors.email}
                         touched={touched.email}
@@ -94,16 +119,16 @@ const SignUp = ({ navigation }: AuthNavigationProps<"SignUp">) => {
                         autoCapitalize="none"
                         returnKeyType="next"
                         returnKeyLabel="next"
-                        onSubmitEditing={() => password.current?.focus()}
+                     //   onSubmitEditing={() => password.current?.focus()}
                     />
                 </Box>
                 <Box marginBottom="m">
                     <TextInput
-                        ref={password}
+                    //    ref={password}
                         icon="lock"
                         placeholder="Enter your password "
                         // validator={passwordValidator} 
-                        onChangeText={handleChange('password')}
+                        onChangeText={password => setPassword(password)}
                         onBlur={handleBlur('password')}
                         error={errors.password}
                         touched={touched.password}
@@ -112,7 +137,7 @@ const SignUp = ({ navigation }: AuthNavigationProps<"SignUp">) => {
                         autoCapitalize="none"
                         returnKeyType="next"
                         returnKeyLabel="next"
-                        onSubmitEditing={() => passwordConfirmation.current?.focus()}
+                     //   onSubmitEditing={() => passwordConfirmation.current?.focus()}
                     />
 
                 </Box>
@@ -133,16 +158,14 @@ const SignUp = ({ navigation }: AuthNavigationProps<"SignUp">) => {
                         returnKeyLabel="go"
                         onSubmitEditing={() => handleSubmit()}
                     />
-
                 </Box>
-
                 <Box
                     alignItems="center"
                     marginTop="m"
                 >
                     <Button
                         variant="primary"
-                        onPress={handleSubmit}
+                        onPress={ClickSubmit}
                         label="Create ur account"
                     />
                 </Box>

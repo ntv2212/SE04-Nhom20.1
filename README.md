@@ -30,7 +30,7 @@
 
 ## **Kiến trúc hệ thống**
 
-## **Công cụ và công nghệ sử dụng**
+## **Công nghệ và công cụ sử dụng**
 ### Công nghệ
 - Ngôn ngữ lập trình
   - TypeScript
